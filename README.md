@@ -115,5 +115,4 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 
 ---
 
-For questions, collaboration, or further support, please contact the project maintainer at [sakaethrambusiness@gmail.com].
-
+Built by `S A M` – Bringing resilience to Social Media world.
