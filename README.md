@@ -33,8 +33,8 @@
 1. **Clone the Repository**
 
 ```bash
-https://github.com/your-username/GeoWatch-Tower.git
-cd GeoWatch-Tower
+git clone "https://github.com/SakaethRam/GeoWatchTower.git"
+cd GeoWatchTower
 ```
 
 2. **Install Dependencies**
