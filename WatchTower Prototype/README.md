@@ -3,7 +3,7 @@
 ## Introduction
 Watch Tower is a cutting-edge cybersecurity solution that leverages the power of Zeek logs, machine learning, and the ELK stack to provide comprehensive threat detection and analysis. Unlike traditional security systems, Watch Tower combines signature-based and anomaly-based detection methods to identify both known and unknown threats.
 
-![WATCH TOWER](https://github.com/user-attachments/assets/5e654369-bb62-487e-87cb-12ed0e416448)
+![Watch Tower](https://github.com/user-attachments/assets/69079956-40bc-4b96-b238-b86f244c3aab)
 
 ## Key Features
 
@@ -25,8 +25,6 @@ The Watch Tower pipeline consists of seven phases:
 5. **Train Unsupervised ML Model:** Trains the Isolation Forest model for unknown threat detection.
 6. **Prediction and Alerting:** Detects threats and anomalies using the trained models and generates alerts.
 7. **Report Generation:** Creates comprehensive weekly security reports.
-
-![Architecture](https://github.com/user-attachments/assets/aecd722d-ad04-4767-9d82-afabbec44971)
 
 ## Getting Started
 
