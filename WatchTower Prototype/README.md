@@ -121,5 +121,3 @@ def detect_threat(input_data):
 
 Contributions are welcome! Please feel free to submit pull requests or open issues for bug fixes, feature requests, or documentation improvements.
 
-## License
-This project is licensed under the MIT License. See `LICENSE` for more details.
