@@ -109,10 +109,6 @@ To contribute:
 - Implement your changes.
 - Submit a pull request with a clear description of modifications.
 
-## License
-
-This project is licensed under the MIT License. See the `LICENSE` file for details.
-
 ---
 
 Built by `S A M` – Bringing resilience to Social Media world.
