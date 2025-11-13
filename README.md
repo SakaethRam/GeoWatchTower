@@ -50,7 +50,7 @@ creating a new category: Verifiable Digital Presence (VDP).
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/GeoWatch-Tower.git
+git clone https://github.com/SakaethRam/GeoWatchTower.git
 cd GeoWatch-Tower
 ```
 
