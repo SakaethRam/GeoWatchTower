@@ -1,98 +1,170 @@
-# GeoWatch Tower
+# GeoWatch Tower (G | W | T)
 
-**GeoWatch Tower** is a real-time AI-powered monitoring system designed to track, analyze, and detect anomalous behaviors across geographical locations. It leverages behavioral data, geolocation intelligence, and machine learning techniques to identify suspicious patterns, making it an ideal solution for security monitoring, bot detection, and threat reconnaissance.
+**GeoWatch Tower** is a cryptographic geolocation verification and behavioral anomaly detection framework. It generates tamper-proof GeoProofs from device data, validates identity authenticity through per-user DNA Honeypots, and records verified proofs on a public Witness Ledger using Zero-Knowledge Proofs and Merkle hashing.
 
 ---
 ![GeoWatch Tower](https://github.com/user-attachments/assets/9777a545-bd31-4bf7-905d-7a595eb446fb)
 
 ---
 
+## Verifiable Digital Presence (VDP)
+GeoWatch Tower™ operates at the intersection of:
+
+>1. User & Entity Behavior Analytics (UEBA)
+>2. Zero Trust Identity
+>3. Cryptographic Verifiability
+>4. Open Threat Intelligence
+
+creating a new category: Verifiable Digital Presence (VDP).
+
+---
+
 ## Features
 
-- **Real-Time Geolocation Tracking**: Monitors incoming data streams and maps activities based on IP geolocation.
-- **Anomaly Detection**: Uses ML models to detect suspicious behavioral patterns and geographic anomalies.
-- **Behavioral Analytics**: Tracks usage patterns, interactions, and frequency to model normal vs. abnormal behaviors.
-- **Visualization**: Provides interactive dashboards for monitoring system status and alerts.
-- **Alert Mechanism**: Triggers alerts upon detection of potential threats or suspicious movement patterns.
+| Feature                     | Description                                                              |
+| --------------------------- | ------------------------------------------------------------------------ |
+| GeoProof Engine             | Generates signed cryptographic proofs of geolocation using Ed25519 keys  |
+| DNA Honeypots               | Invisible behavioral traps per user to detect bots or identity fraud     |
+| Public Witness Ledger       | Tamper-proof proof registry using Merkle Trees and Zero-Knowledge Proofs |
+| Impossible Travel Detection | Detects anomalies in user travel using ML and graph clustering           |
+| On-Device Security          | Proofs generated locally with secure enclave or WebAuthn integration     |
+| IPFS & Blockchain Ready     | Can push validated proofs to decentralized ledgers for transparency      |
 
 ---
 
 ## Core Technologies
 
-- Python 3.10+
-- TensorFlow / Scikit-learn (for ML models)
-- GeoIP2 / Geopy (for geolocation)
-- Streamlit (for dashboard visualization)
-- Pandas, NumPy (for data handling)
-- Matplotlib, Seaborn (for plotting)
+| Category              | Technologies Used                   |
+| --------------------- | ----------------------------------- |
+| Language              | Python 3.x                          |
+| Cryptography          | cryptography, py-ed25519, pyzeroknp |
+| Machine Learning      | scikit-learn, pandas, networkx      |
+| Geospatial Processing | geopy, requests                     |
+| Storage / Ledger      | ipfshttpclient, neo4j               |
+| Data Handling         | uuid, json, dataclasses             |
 
 ---
 
-## Setup Instructions
+## Set-up
 
-1. **Clone the Repository**
+### 1. Clone the Repository
 
 ```bash
-git clone "https://github.com/SakaethRam/GeoWatchTower.git"
-cd GeoWatchTower
+git clone https://github.com/<your-username>/GeoWatch-Tower.git
+cd GeoWatch-Tower
 ```
 
-2. **Install Dependencies**
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-3. **Run the Application**
+Or install manually:
 
 ```bash
-streamlit run app.py
+pip install neo4j geopy requests scikit-learn pandas networkx cryptography ipfshttpclient py-ed25519 pyzeroknp
 ```
 
-4. **Build and Run with Docker**
+### 3. Run the Notebook
 
-To build the Docker image:
+```bash
+jupyter notebook "GeoWatch Tower (v1.0).ipynb"
+```
+
+---
+
+## Docker File
+
+```dockerfile
+FROM python:3.10-slim
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --no-cache-dir \
+    neo4j geopy requests scikit-learn pandas networkx cryptography ipfshttpclient py-ed25519 pyzeroknp
+
+CMD ["jupyter", "notebook", "--ip=0.0.0.0", "--allow-root", "--NotebookApp.token=''", "--NotebookApp.password=''"]
+```
+
+### Build Docker Image
 
 ```bash
 docker build -t geowatch-tower .
 ```
 
-To run the Docker container:
+### Run Container
 
 ```bash
-docker run -p 8501:8501 geowatch-tower
+docker run -p 8888:8888 geowatch-tower
 ```
 
-## Project Structure
+---
 
-```
+## Project Structure & Architecture
+
+```plaintext
 GeoWatch-Tower/
-├── data/                 # Raw and processed datasets
-├── models/               # Saved ML models
-├── notebooks/            # Development and experimentation notebooks
-├── src/                  # Source code for data processing, modeling, visualization
-├── app.py                # Main entry point (Streamlit app)
-├── requirements.txt      # List of project dependencies
-├── Dockerfile            # Docker configuration file
-└── README.md             # Project documentation
+│
+├── GeoWatch Tower (v1.0).ipynb     # Main executable notebook
+├── requirements.txt                 # Dependencies list
+├── Dockerfile                       # Container setup
+│
+├── core/
+│   ├── geoproof.py                  # Cryptographic GeoProof engine (Ed25519)
+│   ├── honeypot.py                  # DNA Honeypot logic
+│   ├── anomaly_detector.py          # ML model for travel anomaly detection
+│   └── ledger.py                    # Merkle + ZKP ledger integration
+│
+└── utils/
+    ├── geo_utils.py                 # GeoIP & distance utilities
+    └── visualization.py             # NetworkX-based cluster visualization
 ```
+
+**Architecture Overview**
+
+```plaintext
+ ┌────────────────────────┐
+ │   User Device / Node   │
+ └──────────┬─────────────┘
+            │
+        (GeoProof)
+            │
+ ┌──────────▼─────────────┐
+ │  GeoWatch Engine (ML)  │
+ └──────────┬─────────────┘
+            │
+       (Merkle + ZKP)
+            │
+ ┌──────────▼─────────────┐
+ │  Public Witness Ledger │
+ └────────────────────────┘
+```
+
+---
+
+## Use Case
+
+**Scenario:**
+An enterprise platform wants to prevent account takeovers by verifying that login requests originate from legitimate, geographically consistent devices.
+GeoWatch Tower ensures each access event carries a signed GeoProof bound to the device, preventing impersonation, spoofing, and synthetic identity attacks.
 
 ---
 
 ## How It Works
 
-1. **Data Collection**: The system ingests data with IP addresses and timestamps.
-2. **Geolocation Mapping**: IP addresses are mapped to geographical coordinates.
-3. **Behavioral Modeling**: Patterns are learned over time to build a normal behavioral baseline.
-4. **Anomaly Detection**: Incoming activities are analyzed against the baseline to detect deviations.
-5. **Visualization & Alerts**: Deviations are visualized, and alerts are generated for critical anomalies.
-
-## Use Cases
-
-- Cybersecurity monitoring
-- Social network bot detection
-- Fraudulent activity detection
-- Network anomaly analysis
+1. **Proof Generation**
+   The device captures GPS/IP data and generates a signed proof using Ed25519.
+2. **DNA Honeypot Injection**
+   Per-user honeypots are deployed to detect automation and mimicry attacks.
+3. **Anomaly Detection**
+   Travel and access events are analyzed using ML and graph models to detect impossible travel or correlated fraud.
+4. **Ledger Validation**
+   Valid proofs are recorded to a public Witness Ledger using Merkle Trees and ZK Proofs.
+5. **Audit & Visualization**
+   Administrators can query the Neo4j/Graph DB to visualize behavioral clusters and anomaly risk.
 
 ---
 
@@ -111,4 +183,4 @@ To contribute:
 
 ---
 
-Built by `S A M` – Bringing resilience to Social Media world.
+© 2025 GeoWatch Tower | Secure ARKIN X Standard v1.0
