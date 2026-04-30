@@ -2,7 +2,7 @@
 
 **GeoWatch Tower** is a cryptographic geolocation verification and behavioral anomaly detection framework. It generates tamper-proof GeoProofs from device data, validates identity authenticity through per-user DNA Honeypots, and records verified proofs on a public Witness Ledger using Zero-Knowledge Proofs and Merkle hashing.
 
-#### View GeoWatch Tower Walk-Through: [GeoWatch Tower (G | W | T)](https://vimeo.com/1181211294?fl=ip&fe=ec)
+#### Here is the GeoWatch Tower MVP Orientation video: [GeoWatch Tower (G | W | T)](https://vimeo.com/1181211294?fl=ip&fe=ec)
 
 ---
 ![GeoWatch Tower](https://github.com/user-attachments/assets/9777a545-bd31-4bf7-905d-7a595eb446fb)
